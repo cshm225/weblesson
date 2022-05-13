@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hello CSS!</title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+		<link rel="stylesheet" href="css/main.css"/>
+<style>
+h2#hoge{
+	color:yellow;
+}
+h2.bar.foo{
+	color:blue;
+	font-size:40px;
+}
+h2.bar{
+	color:red;
+	font-size:40px;
+}
+h2{
+	color:red;
+	font-size:40px;
+}
+h2{
+	color:#56ff00 !important;
+}
+.red{
+	color:red;
+}
+.blue{
+	color:blue;
+}
+.fs14{
+	font-size:14px;
+}
+.fs16{
+	font-size:16px;
+}
+.fs18{
+	font-size:18px;
+}
+.fs20{
+	font-size:20px;
+}
+#hoge{
+	text-decoration:underline;
+	border:1px solid black;
+	width:210px;
+}
+#favorite{
+	width:390px;
+	padding-left:20px;
+	font-size:40px;
+	color:#56ff00;
+	border-left:5px solid green;
+	border-bottom:2px solid green;
+	margin-left:19px;
+	margin-bottom:30px;
+}
+</style>
+	</head>
+	<body>
+		<h1 >Hello CSS!</h1>
+		<h2 class="bar">Hello CSS!</h2>
+		<h2 class="bar foo">Hello CSS!</h2>
+		<h2 id="hoge">Hello CSS!</h2>
+		<h2 style="color:aqua;font-weight:bold;">Hello CSS!</h2>
+		<p>cssはCascading Style Sheets<br>importantが1番強い直接描くのが次くらいid>class</p>
+		<p class="red">hello</p>
+		<ol>
+			<li class="red fs14">巨人</li>
+			<li class="blue fs16">ヤクルト</li>
+			<li class="blue">中日</li>
+			<li class="red">広島</li>
+			<li class="blue">DeNA</li>
+			<li class="red fs20">阪神</li>
+		</ol>
+		<p id="favorite">経験にマイナスなし!</p>
+		</body>
+</html>
+

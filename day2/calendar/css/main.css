@@ -1,0 +1,41 @@
+#container{
+	width:1000px;
+	font-family: "M PLUS Rounded 1c";
+	margin:0 auto;
+	background-color:#7ce2d9;
+	padding:20px 0 40px;
+}
+h1{
+	width:800px;
+	margin:0 auto 20px;
+	text-align:center;
+	font-size:67px;
+	border:5px solid #fff00f;
+	border-radius:20px;
+	padding:0 10px;
+	background-color:#00ff76;
+	color:#ff69b4;
+	text-shadow:1px 1px 0 #333;
+}
+table{
+	width:90%;
+	margin:20px auto 0;
+}
+td,th{
+	border:5px solid #fff00f;
+	text-align:center;
+	background-color:#ffffff;
+	font-size:50px;
+	padding:5px 0;
+}
+th{
+	color:white;
+	background-color:#00ff76;
+	text-shadow:1px 1px 0 #333;
+}
+tr *:last-child{
+	color:#0ba9ea;
+}
+tr *:first-child{
+	color:#ff69b4;
+}
