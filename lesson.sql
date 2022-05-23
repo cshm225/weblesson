@@ -108,4 +108,32 @@ on イベント.イベント番号=経験イベント.イベント番号
 where 経験イベント.クリア区分 is not null and 経験イベント.クリア区分<>0 and イベント.タイプ="2"
 
 33
+select 名称 as なまえ,hp as 現在のhp, 
+case when 職業コード="11" or 職業コード="21"
+then hp+50
+end as 装備後のHP
+from パーティー
 
+34
+update パーティー set mp=mp+20
+where id="A01" or id="A03"
+
+35
+SELECT 名称 as なまえ,hp as 現在のHP, hp*2 as 予想されるダメージ from パーティー
+left join (SELECT * FROM コード WHERE コード種別=1)as c
+on 職業コード=コード値
+WHERE コード名称="武闘家"
+
+36
+
+select 名称 as なまえ,hp+"/"+mp as hpとmp,
+
+case
+when
+状態コード="00" or 状態コード is null
+then ""
+else コード名称
+end as ステータス
+from パーティー
+left join(select * from コード where コード種別=2)as c
+on 状態コード=コード値
