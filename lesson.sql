@@ -137,3 +137,37 @@ end as ステータス
 from パーティー
 left join(select * from コード where コード種別=2)as c
 on 状態コード=コード値
+
+37
+SELECT イベント番号,イベント名称,
+CASE
+when タイプ="01" then "強制"
+WHEN タイプ="02" then "フリー"
+when タイプ="03" then "特殊"
+end as タイプ,
+case 
+when イベント番号<11 then "序盤"
+when イベント番号<18 then "中盤"
+else "終盤"
+end as 発生時期
+FROM `イベント` 
+
+38
+SELECT 名称 as なまえ,hp as 現在のhp,char_length(名称)*10 as 予想ダメージ
+FROM `パーティー`
+
+39
+update パーティー set 状態コード="04"
+where hp%4=0 or mp%4=0
+
+40
+SELECT floor(777*0.7) as 支払った金額
+
+41
+UPDATE パーティー SET hp=round(hp*1.3),mp=round(mp*1.3)
+
+42
+SELECT 名称 as なまえ,hp,power(hp,1) as 攻撃1回目,power(hp,2) as 攻撃2回目,power(hp,3) as 攻撃3回目
+from パーティー
+WHERE 職業コード="10"
+
