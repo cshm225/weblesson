@@ -171,3 +171,55 @@ SELECT 名称 as なまえ,hp,power(hp,1) as 攻撃1回目,power(hp,2) as 攻撃
 from パーティー
 WHERE 職業コード="10"
 
+43
+SELECT 名称 as なまえ,hp,状態コード,
+CASE
+WHEN hp<=50 THEN "3"
+when hp<=100 then "2"
+WHEN hp<=150 then "1"
+else "0"
+end as リスク値
+FROM `パーティー`
+ORDER by リスク値 DESC,hp ASC
+
+44
+SELECT
+CASE 
+WHEN 前提イベント番号 IS null THEN "前提なし"
+ELSE 前提イベント番号
+END as 前提イベント番号,
+イベント番号,
+CASE
+WHEN 後続イベント番号 IS null THEN "後続なし"
+ELSE 後続イベント番号
+END as 後続イベント番号
+FROM イベント
+
+45
+SELECT max(hp),max(mp),min(hp),min(mp),avg(hp),avg(mp)
+from パーティー
+
+46
+SELECT
+case タイプ
+WHEN コード値="01" THEN "強制"
+WHEN コード値="02" THEN "フリー"
+else "特殊"
+end as タイプ,COUNT(タイプ) as イベント数
+FROM `イベント` 
+left JOIN コード
+ON タイプ=コード.コード値
+WHERE コード種別=3
+GROUP BY タイプ
+
+47
+SELECT クリア結果,COUNT(クリア結果) as イベント数 FROM `経験イベント`WHERE クリア結果 is NOT null GROUP BY クリア結果 
+
+48
+SELECT 
+CASE
+WHEN SUM(mp-500)<500 then "mitoreteru"
+WHEN SUM(mp)>999 then "bouzen"
+else "hirehusu"
+end as act
+FROM `パーティー` 
