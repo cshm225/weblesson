@@ -218,8 +218,10 @@ SELECT クリア結果,COUNT(クリア結果) as イベント数 FROM `経験イ
 48
 SELECT 
 CASE
-WHEN SUM(mp-500)<500 then "mitoreteru"
-WHEN SUM(mp)>999 then "bouzen"
+WHEN SUM(mp)<500 then "mitoreteru"
+WHEN SUM(mp)>499 and SUM(mp)<1000 then "bouzen"
 else "hirehusu"
 end as act
 FROM `パーティー` 
+
+49
